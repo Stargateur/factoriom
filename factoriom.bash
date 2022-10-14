@@ -43,6 +43,7 @@ die() {
 
 check_requirements() {
   command -v 7z || die "Missing 7z, see https://www.7-zip.org/download.html"
+  command -v jq || die "Missing jq, see https://stedolan.github.io/jq/"
 }
 
 parse_ostype() {
