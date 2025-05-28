@@ -102,5 +102,4 @@ version=$(jq .version "${source}/info.json" -r)
 name=$(jq .name "${source}/info.json" -r)
 msg "Found ${name} ${version}"
 
-# We use ls to not include hidden files
-7z u "${target}/${name}_${version}.zip" $(ls ${source}/* -d)
+7z u -xr'!.*' "${target}/${name}_${version}.zip" ${source}
