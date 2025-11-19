@@ -102,4 +102,5 @@ version=$(jq .version "${source}/info.json" -r)
 name=$(jq .name "${source}/info.json" -r)
 msg "Found ${name} ${version}"
 
+rm -f "${target}/${name}_${version}.zip"
 7z u -xr'!.*' "${target}/${name}_${version}.zip" ${source}
